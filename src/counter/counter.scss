@@ -1,0 +1,26 @@
+$fontSize: 16px;
+$shadow: 1px 1px 2px 1px rgba(#000000, 0.2);
+
+%shadow-base {
+    box-shadow: $shadow;
+}
+
+button {
+    @extend %shadow-base;
+    font-size: $fontSize;
+    margin-left: 15px;
+    background: none;
+    border: none;
+    transition-duration: 0.3s;
+}
+
+button:hover {
+    font-size: $fontSize * 1.4;
+    transition-duration: 0.3s;
+}
+
+span {
+    @extend %shadow-base;
+    padding: 5px;
+    box-shadow: $shadow;
+}

@@ -1,0 +1,19 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Start Webpack Development Server",
+			"type": "npm",
+			"script": "npm run dev",
+			"group": "build",
+			"detail": "webpack serve --config webpack.dev.config"
+		},
+		{
+			"label": "Start Webpack Build in Production Mode",
+			"type": "npm",
+			"script": "npm run build",
+			"group": "build",
+			"detail": "webpack --config webpack.prod.config --progress"
+		}
+	]
+}

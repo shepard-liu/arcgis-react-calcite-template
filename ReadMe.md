@@ -13,6 +13,15 @@ A generally configured project for building react apps.
 
 ## Dependencies
 
+npm
+```shell
+npm install
+```
+yarn
+```shell
+yarn install
+```
+
 ```JSON
   "devDependencies": {
     "@testing-library/react": "^12.1.2",

@@ -5,13 +5,16 @@
             "ES6"
         ],
         "sourceMap": true,
-        "outDir": "./dist/",
+        "outDir": "./tsc_temp/",
         "noImplicitAny": true,
-        "module": "es6",
+        // We need to extend ES6 classes
         "target": "es5",
         "jsx": "react",
+        //"jsxFactory": "tsx",
         "allowJs": true,
-        "moduleResolution": "node"
+        "moduleResolution": "node",
+        "experimentalDecorators": true,
+        "allowSyntheticDefaultImports": true
     },
     "exclude": [
         "node_modules"

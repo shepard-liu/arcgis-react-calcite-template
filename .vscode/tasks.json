@@ -4,14 +4,14 @@
 		{
 			"label": "Start Webpack Development Server",
 			"type": "npm",
-			"script": "npm run dev",
+			"script": "dev",
 			"group": "build",
 			"detail": "webpack serve --config webpack.dev.config"
 		},
 		{
 			"label": "Start Webpack Build in Production Mode",
 			"type": "npm",
-			"script": "npm run build",
+			"script": "build",
 			"group": "build",
 			"detail": "webpack --config webpack.prod.config --progress"
 		}

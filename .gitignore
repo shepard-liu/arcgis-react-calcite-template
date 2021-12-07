@@ -1,10 +1,15 @@
 
 node_modules
 
-dist/**.*
+dist/**
+
 
 .eslintcache
 
 tsc_temp
 
 .vscode/settings.json
+
+tsc_temp
+
+.eslintcache

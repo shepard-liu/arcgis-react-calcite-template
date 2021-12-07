@@ -6,8 +6,12 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 // const ErrorOverlayWebpackPlugin = require('error-overlay-webpack-plugin');
 
 module.exports = (env) => {
-    
+
     return {
+        // Enables disk caching to improve building performance
+        cache: {
+            type: 'filesystem',
+        },
         entry: {
             index: path.resolve(__dirname, './src/index.tsx'),
         },
@@ -16,6 +20,7 @@ module.exports = (env) => {
                 // Typescript files
                 {
                     test: /\.tsx?$/,
+                    include: path.resolve(__dirname, './src'),
                     use: {
                         loader: 'ts-loader',
                         options: {
@@ -28,6 +33,7 @@ module.exports = (env) => {
                 // Stylesheets
                 {
                     test: /\.(scss|css)$/,
+                    include: path.resolve(__dirname, './src'),
                     use: [
                         env.production
                             ? 'style-loader'
@@ -69,7 +75,8 @@ module.exports = (env) => {
             // ESLint plugin for checking code styles
             new EslintWebpackPlugin({
                 extensions: ['.tsx', '.ts', '.js'],
-                exclude: ['node_modules']
+                exclude: ['node_modules'],
+                cache: true
             }),
             // Show pretty error overlay when app crashes in development
             // This plugin is currently not available with Webpack 5 (Webpack Dev Server v4)
@@ -81,7 +88,6 @@ module.exports = (env) => {
         output: {
             filename: '[name].bundle.js',
             path: path.resolve(__dirname, 'dist'),
-            clean: true,
         },
         optimization: {
             splitChunks: {

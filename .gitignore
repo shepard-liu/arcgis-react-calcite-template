@@ -1,6 +1,7 @@
 
 node_modules
 
-dist
+dist/**.*
+!dist/Placeholder.txt
 
 .vscode/settings.json

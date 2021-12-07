@@ -1,6 +1,6 @@
 # Template React Project
 
-A generally configured project for building react apps;
+A generally configured project for building react apps.
 
 | Item                  | Use                                        |
 | --------------------- | ------------------------------------------ |

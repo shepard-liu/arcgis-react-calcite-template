@@ -2,6 +2,9 @@
 node_modules
 
 dist/**.*
-!dist/Placeholder.txt
+
+.eslintcache
+
+tsc_temp
 
 .vscode/settings.json

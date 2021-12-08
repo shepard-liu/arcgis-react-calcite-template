@@ -31,7 +31,7 @@ to have all the dependencies installed.
 
 ### Use Webpack Development Server
 
-You can simply press Ctrl+Shift+B and choose '(Initial Build)Start Webpack Development Server' to start in Visual Studio Code. 
+You can simply press Ctrl+Shift+B and choose ***'(Initial Build)Start Webpack Development Server'*** to start in Visual Studio Code. 
 
 If you are not using VS Code, run
 ```shell
@@ -84,7 +84,7 @@ And create template components with specified component class name with
 create-component HelloReactComponent -d ./components
 ```
 
-You should be able to see a directory '/component/HelloReactComponent' after answering yes in the project root path.
+You should be able to see a directory '/component/HelloReactComponent' in the project root path after answering **yes**.
 
 ## Dependencies
 
@@ -142,27 +142,27 @@ You should be able to see a directory '/component/HelloReactComponent' after ans
 Task definitions for Visual Studio Code
 
 ```JSON
-	"tasks": [
-		{
-			"label": "Start Webpack Development Server",
-			"type": "npm",
-			"script": "dev",
-			"group": "build",
-			"detail": "webpack serve --config webpack.dev.config"
-		},
-		{
-			"label": "(Initial Build)Start Webpack Development Server",
-			"type": "npm",
-			"script": "devBuildWithAssets",
-			"group": "build",
-			"detail": "webpack serve --config webpack.dev.config --env copy"
-		},
-		{
-			"label": "Start Webpack Build in Production Mode",
-			"type": "npm",
-			"script": "build",
-			"group": "build",
-			"detail": "webpack --config webpack.prod.config --progress"
-		}
-	]
+"tasks": [
+  {
+    "label": "Start Webpack Development Server",
+    "type": "npm",
+    "script": "dev",
+    "group": "build",
+    "detail": "webpack serve --config webpack.dev.config"
+  },
+  {
+    "label": "(Initial Build)Start Webpack Development Server",
+    "type": "npm",
+    "script": "devBuildWithAssets",
+    "group": "build",
+    "detail": "webpack serve --config webpack.dev.config --env copy"
+  },
+  {
+    "label": "Start Webpack Build in Production Mode",
+    "type": "npm",
+    "script": "build",
+    "group": "build",
+    "detail": "webpack --config webpack.prod.config --progress"
+  }
+]
 ```

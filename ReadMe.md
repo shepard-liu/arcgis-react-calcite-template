@@ -1,8 +1,8 @@
-# Template React - ArcGIS API for JavaScript Project
+# Template ArcGIS API for JavaScript Using React Project
 
 A generally configured project for developing integerated apps.
 
-- Optimized for building performance (approximate 10s for initial development build and 0.5s for incremental builds)
+- Optimized for building performance (Takes less than 10s for non-initial development build and 0.5s for incremental builds)
 - With Calcite Components for React configured
 - Sample code for using ArcGIS API for JavaScript with React
 
@@ -17,7 +17,7 @@ A generally configured project for developing integerated apps.
 
 ## Usage
 
-Intended to improve building performance, you have to copy the Esri assets manually before initial development build. This step is not necessary when building in production mode because copy-webpack-plugin is already configured for that purpose.
+### Install Dependencies
 
 First, run in your terminal
 ```shell
@@ -29,16 +29,33 @@ yarn install
 ```
 to have all the dependencies installed.
 
-You can simply press Ctrl+Shift+B and choose 'Start Webpack Development Server' to start in Visual Studio Code. But ***before the initial development build***, run this command to copy the assets of ArcGIS API for JavaScript.
-```shell
-npm run copy-assets
-```
+### Use Webpack Development Server
+
+You can simply press Ctrl+Shift+B and choose '(Initial Build)Start Webpack Development Server' to start in Visual Studio Code. 
 
 If you are not using VS Code, run
 ```shell
-npm run dev
+npm run devBuildWithAssets
 ```
 to start the webpack development server.
+
+### After Initial Build
+
+Intended to improve building performance, There is another npm script ***'dev'*** to start the development server ***without*** copying the assets.
+
+```shell
+npm run dev
+```
+
+### Build in Production Mode
+
+ In production mode, the assets of ArcGIS API for JavaScript will be copied by default.
+
+ ```shell
+ npm run build
+ ```
+
+### Create-Component CLI Tool
 
 Alone with the project template, there exists a simple Node.js CLI tool for creating react components either with TypeScript/Sass or JavaScript/CSS template.
 ```shell
@@ -117,26 +134,35 @@ You should be able to see a directory '/component/HelloReactComponent' after ans
   "scripts": {
     "test": "jest --env=jsdom",
     "dev": "webpack serve --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js",
-    "copy-assets":"cp ./node_modules/@arcgis/core/assets ./dist/assets"
+    "devBuildWithAssets": "webpack serve --config webpack.dev.js --env copy",
+    "build": "webpack --config webpack.prod.js"
   },
 ```
 
-Including task definitions for Visual Studio Code
+Task definitions for Visual Studio Code
 
 ```JSON
-{
-    "label": "Start Webpack Development Server",
-    "type": "npm",
-    "script": "dev",
-    "group": "build",
-    "detail": "webpack serve --config webpack.dev.config"
-},
-{
-    "label": "Start Webpack Build in Production Mode",
-    "type": "npm",
-    "script": "build",
-    "group": "build",
-    "detail": "webpack --config webpack.prod.config --progress"
-}
+	"tasks": [
+		{
+			"label": "Start Webpack Development Server",
+			"type": "npm",
+			"script": "dev",
+			"group": "build",
+			"detail": "webpack serve --config webpack.dev.config"
+		},
+		{
+			"label": "(Initial Build)Start Webpack Development Server",
+			"type": "npm",
+			"script": "devBuildWithAssets",
+			"group": "build",
+			"detail": "webpack serve --config webpack.dev.config --env copy"
+		},
+		{
+			"label": "Start Webpack Build in Production Mode",
+			"type": "npm",
+			"script": "build",
+			"group": "build",
+			"detail": "webpack --config webpack.prod.config --progress"
+		}
+	]
 ```

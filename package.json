@@ -6,8 +6,8 @@
   "scripts": {
     "test": "jest --env=jsdom",
     "dev": "webpack serve --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js",
-    "copy-assets":"cp ./node_modules/@arcgis/core/assets ./dist/assets"
+    "devBuildWithAssets": "webpack serve --config webpack.dev.js --env copy",
+    "build": "webpack --config webpack.prod.js"
   },
   "keywords": [
     "React",

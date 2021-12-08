@@ -9,6 +9,13 @@
 			"detail": "webpack serve --config webpack.dev.config"
 		},
 		{
+			"label": "(Initial Build)Start Webpack Development Server",
+			"type": "npm",
+			"script": "devBuildWithAssets",
+			"group": "build",
+			"detail": "webpack serve --config webpack.dev.config --env copy"
+		},
+		{
 			"label": "Start Webpack Build in Production Mode",
 			"type": "npm",
 			"script": "build",

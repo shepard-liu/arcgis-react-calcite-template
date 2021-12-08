@@ -1,4 +1,4 @@
-# Template ArcGIS API for JavaScript Using React Project
+# ArcGIS API for JavaScript With React
 
 A generally configured project for developing integerated apps.
 

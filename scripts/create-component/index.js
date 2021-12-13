@@ -142,7 +142,7 @@ names.forEach((name, index) => {
             path: path.join(comDir, className + '.tsx'),
             content: getTsx(className)
         }, {
-            path: path.join(comDir, className + '.sass'),
+            path: path.join(comDir, className + '.scss'),
             content: getCss(cssName)
         }, {
             path: path.join(comDir, 'interfaces.d.ts'),

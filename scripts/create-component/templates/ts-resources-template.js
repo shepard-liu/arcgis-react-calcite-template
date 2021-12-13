@@ -1,6 +1,6 @@
 module.exports = function (className, cssName, camelName) {
     return `
-import './${className}.css';
+import './${className}.scss';
 
 export const CSS = {
     ${camelName}: "${cssName}"
